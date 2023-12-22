@@ -1,0 +1,24 @@
+.about{
+    padding-top: 11%;
+    height: 10%;
+}
+.sale{
+    padding-top: 5%;
+ 
+    
+}
+.abtflex{
+    display:flex
+}
+.text{
+    padding-top: 5%;   
+    margin-left: 4%;
+}
+.text h1{
+   font-weight: bold;
+}
+.text p{
+    color: gray;
+    font-weight:600;
+    padding-top: 20px;
+}

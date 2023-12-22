@@ -1,0 +1,23 @@
+.main{
+    background: linear-gradient(90deg,purple,orange);
+}
+
+
+.head{
+    text-align: center;
+    padding-top: 50px;
+    
+}
+
+.form{
+    text-align: center;
+ 
+}
+.div1{
+    padding: 10px;
+   
+
+}
+.email{
+    margin-left: 35px;
+}

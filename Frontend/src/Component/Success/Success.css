@@ -1,0 +1,27 @@
+.main {
+	background: linear-gradient(-45deg, #75645f, #534f50, #262728, #757978);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+	padding-top:8%;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.success{
+    height: 70px;
+}
+.new{
+    font-family: serif;
+    font-style:italic;
+    font-weight: bold;
+}

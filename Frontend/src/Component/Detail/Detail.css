@@ -1,0 +1,82 @@
+.image{
+    padding-top: 15%;
+    display: flex;
+ }
+ .image img{
+     width: 40%;
+     height: 90%;
+     padding-top: 2%;
+ }
+ 
+ .btns {
+   margin-top: 20px;
+   margin-right: 70%;
+  
+ }
+ 
+ .btns button {
+   padding: 10px 20px;
+   font-size: 16px;
+   margin-right: 10px;
+   cursor: pointer;
+   border: none;
+   outline: none;
+   background-color: #1c2125; 
+   color: #fff; 
+   border-radius: 5px;
+   text-decoration: none;
+   
+ }
+ 
+ .btns button:hover {
+   background-color: #373839; 
+   transition: background-color 0.8s ease;
+ }
+ 
+ .name{
+     padding-top: 20px;
+     margin-left: 2%;
+ }
+ .list{
+     margin-left: 5%;
+ }
+ .name h1
+ {
+     font-family: serif;
+     font-weight: bold;
+ }
+ .name h6{
+     font-family: serif;
+    font-display: str;
+    padding-top: 20px;
+ }
+ .offer{
+     display: flex;
+    gap: 20px;
+    padding-top: 10px;
+    font-family: serif;
+ 
+ 
+ }
+ .offer h6{
+     padding-top: 3%;
+ }
+ 
+ .qua{
+     display: flex;
+     
+ }
+ .quantity{
+     padding:5px;
+     margin-left: 8px;
+     
+ 
+ }
+ .quantity1{
+     padding: 5px;
+     margin-right: 8px;
+     margin-left: 8px;
+ 
+ }
+ 
+ 

@@ -42,7 +42,7 @@ const Adminreg = () => {
   return (
  <div>
     <div className='main'>
-    <div className="login-box">
+    <div className="login-box ">
   <h2>Registration Form</h2>
   <form onSubmit={onHandleclick}>
     <div className="user-box">

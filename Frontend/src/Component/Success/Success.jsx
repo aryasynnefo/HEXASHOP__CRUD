@@ -11,6 +11,7 @@ const Success = () => {
     
 <h1 className="new fw-light text-white m-0">Succesfully Purchased!</h1>
 </div>
+<button className='homebtn'>Back to Home</button>
 </div>
 </div>
     

@@ -1,24 +1,106 @@
-.about{
+.about {
     padding-top: 11%;
     height: 10%;
 }
-.sale{
+
+.sale {
     padding-top: 5%;
- 
-    
 }
-.abtflex{
-    display:flex
+
+.abtflex {
+    display: flex
 }
-.text{
-    padding-top: 5%;   
+
+.text {
+    padding-top: 5%;
     margin-left: 4%;
 }
-.text h1{
-   font-weight: bold;
+
+.text h1 {
+    font-weight: bold;
 }
-.text p{
+
+.text p {
     color: gray;
-    font-weight:600;
+    font-weight: 600;
     padding-top: 20px;
+}
+
+.about {
+    padding-top: 8%;
+    text-align: center;
+}
+
+.about h1 {
+    color: rgb(30, 26, 26);
+    font-weight: bold;
+}
+
+.about p {
+    font-style: oblique;
+    color: gray;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 3%;
+}
+
+.g1 h5 {
+    padding-left: 15%;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.g1 p {
+    padding-left: 25%;
+    color: gray;
+    font-style: oblique;
+    font-weight: 500;
+}
+
+.card-title {
+    color: rgb(30, 26, 26);
+    font-weight: bold;
+    text-align: center;
+}
+
+.abt {
+
+    color: black;
+    font-weight: 100;
+    text-align: justify;
+}
+
+.section-heading {
+    color: rgb(30, 26, 26);
+    font-weight: bold;
+}
+
+.section-heading span {
+    color: gray;
+    font-style: oblique;
+    font-weight: 500;
+}
+
+.inner-contents {
+    position: absolute;
+    left: 580px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+
+}
+
+.inner-contents h4 {
+
+    margin-top: -10px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }

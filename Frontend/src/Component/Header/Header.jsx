@@ -1,44 +1,60 @@
- import React, { useState } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { BsCartFill } from "react-icons/bs";
 
-
 const Header = () => {
-const [user,setUser]=useState("")
-  const userauth=async()=>{
-  const {usertoken}=JSON.parse(localStorage.getItem("usertoken"))
-  // console.log("the token is",usertoken);
-    const res=await axios.get("http://localhost:7001/api/user",{headers:{"Authorization":`Bearer ${usertoken}`}})
-    
-    //  console.log("usersasas",res.data);
-     setUser(res.data)
-  }
+  const [user, setUser] = useState("");
+  const [count, setCount] = useState(0);
+  const [state, setState] = useState(0);
+  const userauth = async () => {
+    const usertoken = localStorage.getItem("usertoken");
+    // console.log("the token is",usertoken);
 
-  // const logOut=()=>{
-  //   // localStorage.removeItem("token");
-  //   localStorage.clear();
-  //   setCnt(cnt+1)
-  // }
-React.useEffect(() => {
-  
-  userauth();
+    // const res=await axios.get("http://localhost:7001/api/user",{headers:{"Authorization":`Bearer ${usertoken}`}})
+    axios
+      .get("http://localhost:7001/api/user", {
+        headers: { Authorization: `Bearer ${usertoken}` },
+      })
+      .then((res) => {
+        setUser(res.data);
+        if (res.status == 200) {
+          setUser(res.data);
+          setState(res.status);
+        } else {
+          setState(res.status);
+        }
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+        const { msg } = error.response.data;
+      });
+  };
 
-}, []);
+  const logOut = () => {
+    localStorage.removeItem("usertoken");
+    setCount(count + 1);
+  };
 
+  React.useEffect(() => {
+    userauth();
+  }, [count]);
 
   return (
-    <div >
-      <header className="header-area header-sticky" >
-        <div className="container">
-          <div className="row">
+    <div>
+      <header className="header-area header-sticky">
+        <div className="container header">
+          <div className="row mainhead">
             <div className="col-12">
               <nav className="main-nav">
                 {/* <!-- ***** Logo Start ***** --> */}
-               
-               <NavLink to="/"> <img src="./images/logo.png" /></NavLink>
-               
+
+                <NavLink to="/">
+                  {" "}
+                  <img src="./images/logo.png" />
+                </NavLink>
+
                 {/* <!-- ***** Logo End ***** --> */}
                 {/* <!-- ***** Menu Start ***** --> */}
                 <ul className="nav">
@@ -47,8 +63,7 @@ React.useEffect(() => {
                       Home
                     </NavLink>
                   </li>
-                 
-                  
+
                   <li className="scroll-to-section">
                     <a href="#men">Men's</a>
                   </li>
@@ -62,57 +77,41 @@ React.useEffect(() => {
                     <a href="javascript:;">Pages</a>
                     <ul>
                       <li>
-                       <NavLink to="/about">About Us</NavLink>
+                        <NavLink to="/about">About Us</NavLink>
                       </li>
-                      {/* <li>
-                        <a href="products.html">Products</a>
-                      </li>
-                      <li>
-                        <a href="single-product.html">Single Product</a>
-                      </li> */}
+
                       <li>
                         <a href="contact.html">Contact Us</a>
                       </li>
-                      
-                     
                     </ul>
                   </li>
-                  {/* <li className="submenu">
-                    <a href="javascript:;">Features</a>
-                    <ul>
-                      <li>
-                        <a href="#">Features Page 1</a>
-                      </li>
-                      <li>
-                        <a href="#">Features Page 2</a>
-                      </li>
-                      <li>
-                        <a href="#">Features Page 3</a>
-                      </li>
-                      <li>
-                        <a
-                          rel="nofollow"
-                          href="https://templatemo.com/page/4"
-                          target="_blank"
-                        >
-                          Template Page 4
-                        </a>
-                      </li>
-                    </ul>
-                  </li> */}
+
                   <li className="scroll-to-section">
                     <a href="#explore">Explore</a>
                   </li>
-                  {{user}?<span>{user} </span>:<NavLink to="/userlogin" ><button className="loginbtn">Login</button></NavLink>}
-                    
-                   
-                    <li >
-                    <NavLink to="/cart"><BsCartFill/></NavLink>
-                    </li>
-                  
+                  <li className="usernameli">
+                    {state == 200 ? (
+                      <div>
+                        <span>{user} </span>
+                        <button onClick={logOut} className="usernameli">
+                          Logout
+                        </button>
+                      </div>
+                    ) : (
+                      <NavLink to="/userlogin">
+                        <button className="usernameli">Login</button>
+                      </NavLink>
+                    )}
+                    {/* {state==200?<h2> {user} logout</h2>:<h2>login</h2>} */}
+                  </li>
 
+                  <li className="crt">
+                    <NavLink to="/cart">
+                      <BsCartFill />
+                    </NavLink>
+                  </li>
                 </ul>
-                
+
                 <a className="menu-trigger">
                   <span>Menu</span>
                 </a>

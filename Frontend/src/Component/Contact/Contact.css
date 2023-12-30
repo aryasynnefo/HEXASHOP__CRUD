@@ -1,0 +1,28 @@
+.contact{
+    padding-top: 11%;
+    height: 10%;
+}
+.sale{
+    padding-top: 5%;
+ 
+    
+}
+.abtflex{
+    display:flex
+}
+.map{
+    width: 40%;
+  padding-top: 50px;
+margin-left: 10%;
+}
+.section-heading{
+    color: rgb(30, 26, 26);
+        font-weight: bold;
+        margin-left: 20%;
+        padding-top: 60px;
+    }
+    .section-heading span{
+        color: gray;
+       font-style: oblique;
+       font-weight:500;
+    }

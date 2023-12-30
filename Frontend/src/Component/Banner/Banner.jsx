@@ -11,24 +11,17 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   const [item, setItem] = useState([]);
   const displayItem = async () => {
-    
     const res = await axios.get("http://localhost:7001/api/display");
     const data = res.data;
-   if (res.status === 404 || !data) {
+    if (res.status === 404 || !data) {
       console.log("error");
     } else {
-     
       setItem(data);
     }
   };
-// const userauth=()=>{
-//   const token=JSON.parse(localStorage.getItem("token"))
-//   console.log("the token is",token);
 
-// }
   useEffect(() => {
     displayItem();
-    // userauth();
   }, []);
   return (
     <div>
@@ -40,10 +33,10 @@ const Banner = () => {
                 <div className="thumb">
                   <div className="inner-content">
                     <h4>We Are Hexashop</h4>
-                    <span>Awesome, clean &amp; creative HTML5 Template</span>
-                    <div className="main-border-button">
-                      <a href="#">Purchase Now!</a>
-                    </div>
+                    <span>
+                      Awesome, clean &amp; classy clothings for men,women and
+                      kids
+                    </span>
                   </div>
                   <img src="./images/left-banner-image.jpg" alt="" />
                 </div>
@@ -59,18 +52,7 @@ const Banner = () => {
                           <h4>Women</h4>
                           <span>Best Clothes For Women</span>
                         </div>
-                        <div className="hover-content">
-                          <div className="inner">
-                            <h4>Women</h4>
-                            <p>
-                              Lorem ipsum dolor sit amet, conservisii ctetur
-                              adipiscing elit incid.
-                            </p>
-                            <div className="main-border-button">
-                              <a href="#">Discover More</a>
-                            </div>
-                          </div>
-                        </div>
+
                         <img src="./images/baner-right-image-01.jpg" />
                       </div>
                     </div>
@@ -82,18 +64,7 @@ const Banner = () => {
                           <h4>Men</h4>
                           <span>Best Clothes For Men</span>
                         </div>
-                        <div className="hover-content">
-                          <div className="inner">
-                            <h4>Men</h4>
-                            <p>
-                              Lorem ipsum dolor sit amet, conservisii ctetur
-                              adipiscing elit incid.
-                            </p>
-                            <div className="main-border-button">
-                              <a href="#">Discover More</a>
-                            </div>
-                          </div>
-                        </div>
+
                         <img src="./images/baner-right-image-02.jpg" />
                       </div>
                     </div>
@@ -105,18 +76,7 @@ const Banner = () => {
                           <h4>Kids</h4>
                           <span>Best Clothes For Kids</span>
                         </div>
-                        <div className="hover-content">
-                          <div className="inner">
-                            <h4>Kids</h4>
-                            <p>
-                              Lorem ipsum dolor sit amet, conservisii ctetur
-                              adipiscing elit incid.
-                            </p>
-                            <div className="main-border-button">
-                              <a href="#">Discover More</a>
-                            </div>
-                          </div>
-                        </div>
+
                         <img src="./images/baner-right-image-03.jpg" />
                       </div>
                     </div>
@@ -128,18 +88,7 @@ const Banner = () => {
                           <h4>Accessories</h4>
                           <span>Best Trend Accessories</span>
                         </div>
-                        <div className="hover-content">
-                          <div className="inner">
-                            <h4>Accessories</h4>
-                            <p>
-                              Lorem ipsum dolor sit amet, conservisii ctetur
-                              adipiscing elit incid.
-                            </p>
-                            <div className="main-border-button">
-                              <a href="#">Discover More</a>
-                            </div>
-                          </div>
-                        </div>
+
                         <img src="./images/baner-right-image-04.jpg" />
                       </div>
                     </div>
@@ -160,7 +109,7 @@ const Banner = () => {
         </p>
       </div>
 
-      <div className="container crd" >
+      <div className="container crd">
         {item.map((d) => {
           if (d.forcategory === "men") {
             return (
@@ -192,20 +141,19 @@ const Banner = () => {
           if (d.forcategory === "women") {
             return (
               <>
-               <Link to={`/detail/${d._id}`}>
-               <div className="card">
-                  <img src={d.image} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">{d.product_name}</p>
-                    <p className="card-sub">${d.price}</p>
+                <Link to={`/detail/${d._id}`}>
+                  <div className="card">
+                    <img src={d.image} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                      <p className="card-text">{d.product_name}</p>
+                      <p className="card-sub">${d.price}</p>
+                    </div>
                   </div>
-                </div>
                 </Link>
               </>
             );
           }
         })}
-        
       </div>
 
       {/* ------------------------------------KIDS--------------------------------------- */}
@@ -223,19 +171,18 @@ const Banner = () => {
             return (
               <>
                 <Link to={`/detail/${d._id}`}>
-                <div className="card">
-                  <img src={d.image} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">{d.product_name}</p>
-                    <p className="card-sub">${d.price}</p>
+                  <div className="card">
+                    <img src={d.image} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                      <p className="card-text">{d.product_name}</p>
+                      <p className="card-sub">${d.price}</p>
+                    </div>
                   </div>
-                </div>
                 </Link>
               </>
             );
           }
         })}
-       
       </div>
 
       {/* ---------------------------------------EXPLORE----------------------------- */}
@@ -312,8 +259,6 @@ const Banner = () => {
           </div>
         </div>
       </section>
-
-    
 
       {/* -----------------------------SUBSCRIBE-------------------------------- */}
 

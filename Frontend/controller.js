@@ -21,7 +21,7 @@ export async function Userlogin(req, res) {
     if (success !== true)
       return res.status(404).send("username or password not exist");
     const usertoken = await sign({ username }, process.env.JWT_KEY, {
-      expiresIn: "48h",
+      expiresIn: "24h",
     });
     // console.log(usertoken);
     return res.status(200).send({ msg: "successfully logged in", usertoken });
@@ -144,7 +144,8 @@ export async function home(req, res) {
   try {
     // console.log(req.user.username);
     const user = req.user.username;
-    return res.status(200).send({ msg: `hello ${user}` });
+     console.log("user is",req.user);
+    return res.status(200).send({user});
   } catch (error) {
     return res.status(403).send(error);
   }

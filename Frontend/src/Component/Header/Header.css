@@ -23,7 +23,7 @@
 }
 
 .header-area {
-  border-bottom: 3px dotted #eee;
+
   box-shadow: none;
   background-color: #fff;
   position: absolute;
@@ -43,7 +43,7 @@
   background: transparent;
 }
 
-.header-area .main-nav .logo {
+/* .header-area .main-nav .logo {
   line-height: 100px;
   color: #fff;
   font-size: 28px;
@@ -55,10 +55,11 @@
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-}
+} */
 
 .background-header .main-nav .logo {
   line-height: 75px;
+
 }
 
 .background-header .nav {
@@ -103,8 +104,31 @@
   letter-spacing: 1px;
 }
 
+.mainhead {
+  width: 100%;
+}
+
 .header-area .main-nav .nav li a {
   color: #2a2a2a;
+}
+
+.usernameli button {
+  padding: 1px;
+  width: 200%;
+  border-radius: 50px;
+  border: 1px solid gray;
+  color: black;
+}
+
+.usernameli button:hover {
+  background-color: gray;
+  transition: 0.6s;
+  color: white;
+
+}
+
+.crt {
+  margin-left: 35px;
 }
 
 .header-area .main-nav .nav li:hover a,
@@ -275,9 +299,11 @@
   transform-origin: 33% 0;
   top: 10px;
 }
-.carticon{
+
+.carticon {
   width: 100px;
 }
+
 .header-area .main-nav .menu-trigger.active span,
 .header-area .main-nav .menu-trigger.active span:before,
 .header-area .main-nav .menu-trigger.active span:after {
@@ -451,16 +477,7 @@
   }
 }
 
-.loginbtn{
- padding: 5px;
- background-color: transparent ;
- border: 1px dotted black;
 
-}
-.loginbtn:hover{
-  background-color: rgb(198, 191, 191);
-  transition: 0.7s;
-}
 
 
 @media (min-width: 767px) {
